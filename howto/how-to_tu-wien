@@ -1,0 +1,37 @@
+
+PREREQUISITES
+
+  Binary installation (.deb packages):
+    * libboost-dev (1.46.1)
+    * libeigen3-dev (3.0.1)
+    * libvtk5.6 (5.6.1)
+    * libqhull-dev (2009.1)
+
+  Source installation:
+    * flann-1.7.1
+        > http://ias.cs.tum.edu/~goron/3rd/flann-1.7.1-src.zip
+    * opencv-2.4.2
+        > http://ias.cs.tum.edu/~goron/3rd/opencv-2.4.2-src.tar.bz2
+        > http://ias.cs.tum.edu/~goron/3rd/opencv-2.4.2_install_required_prerequisites.sh
+    * pcl-1.7
+        > svn co http://svn.pointclouds.org/pcl/trunk@8212 pcl-trunk
+        > cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_surface_on_nurbs=ON ..
+
+INSTALLATION
+
+  * segmenter-1.0
+      > http://ias.cs.tum.edu/~goron/3rd/segmenter-1.0.tar.gz
+      > 'opennurbs.h' error -- changed path
+          vim ../segmenter-1.0/v4r/ObjectModeling/Triangulation.h
+            - #include <pcl/surface/opennurbs.h>
+            + #include <pcl/surface/3rdparty/opennurbs/opennurbs.h>
+      > 'clock_gettime' error -- necessary library dependencies not given
+          vim ../segmenter-1.0/v4r/TomGine/CMakeLists.txt
+            - target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${GL_LIBRARIES} ${GLU_LIBRARIES} pthread)
+            + target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${GL_LIBRARIES} ${GLU_LIBRARIES} pthread X11 rt)
+      > cd ../segmenter-1.0/ && mkdir build && cd build && cmake .. && make && sudo make install
+
+USAGE
+
+  * cat ../segmenter-1.0/README.txt
+
