@@ -1,0 +1,37 @@
+
+PREREQUISITES
+
+  Binary installation (.deb packages):
+    * freeglut3-dev (2.6.0)     | OpenGL
+    * libglew1.6-dev (1.6.0)    | OpenGL
+    * libglu1-mesa-dev (7.11)   | OpenGL
+    * libgl1-mesa-dev (7.11)    | OpenGL
+    * binutils-gold (2.21.53)   | GNU Linker
+    * libqt4-dev (4.7.4)        | Qt
+    * libqt4-opengl-dev (4.7.4) | Qt
+
+  Source installation:
+    * libfreenect-trunk
+        > https://github.com/OpenKinect/libfreenect/tree/unstable
+        > press 'ZIP' button
+        > cd libfreenect-unstable && mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Release && make
+    * opencl-1.1
+        > sudo mkdir /usr/include/CL
+        > http://www.khronos.org/registry/cl/
+        > copy 'OpenCL 1.1' header file to '/usr/include/CL'
+
+INSTALLATION
+
+  * icl-7.10.0
+      > svn co https://opensource.cit-ec.de/svn/icl/trunk@3524 icl-trunk
+      > http://ias.cs.tum.edu/~goron/3rd/icl-7.10.0-build.cfg
+      > cp icl-7.10.0-build.cfg icl-trunk/
+      > cd icl-trunk && ./configure icl-7.10.0-build.cfg && cd /build/release && make -j4 all install
+
+USAGE
+    > vim icl-trunk/ICLGeom/examples/kinect-segmentation-demo.cpp
+    > ./icl-trunk/build/release/ICLGeom/bin/icl-7.10.0/icl-kinect-segmentation-demo
+    > "the depth camera needs calibration"
+    > ./icl-trunk/build/release/ICLMarkers/bin/icl-7.10.0/icl-camera-calibration
+    > "or they can send us a calibration file"
+
