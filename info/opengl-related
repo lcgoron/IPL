@@ -1,0 +1,14 @@
+
+GL
+GLU
+GLUT
+GLEW
+
+/usr/include/GL/
+
+OpenGL
+ * freeglut3
+ * freeglut3-dev
+ * binutils-gold
+   (for solving the linkage problems of ubuntu 11.10)
+
