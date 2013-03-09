@@ -1,0 +1,28 @@
+
+Index: cmake_files/linux/find_EIGEN3.cmake
+===================================================================
+--- cmake_files/linux/find_EIGEN3.cmake	(revision 3494)
++++ cmake_files/linux/find_EIGEN3.cmake	(working copy)
+@@ -1 +1 @@
+-icl_check_external_package(EIGEN3 "Eigen/Core;Eigen/SVD" "" "" "include/eigen3" TRUE TRUE)
++icl_check_external_package(EIGEN3 "Eigen/src/Core;Eigen/src/SVD" "" "" "usr/include/eigen3" TRUE TRUE)
+
+Index: cmake_files/linux/find_OPENGL.cmake
+===================================================================
+--- cmake_files/linux/find_OPENGL.cmake	(revision 3494)
++++ cmake_files/linux/find_OPENGL.cmake	(working copy)
+@@ -1,2 +1,2 @@
+-icl_simple_check_external_package(OPENGL "GL/gl.h;GL/glu.h;GL/glew.h" "GL;GLU;GLEW")
+-icl_simple_check_external_package(GLX "GL/glx.h" "GL")
++icl_check_external_package(OPENGL "gl.h;glu.h;glew.h" "" "" "usr/include/GL" TRUE TRUE)
++icl_check_external_package(GLX "glx.h" "" "" "usr/include/GL" TRUE TRUE)
+
+Index: cmake_files/linux/find_LIBFREENECT.cmake
+===================================================================
+--- cmake_files/linux/find_LIBFREENECT.cmake	(revision 3524)
++++ cmake_files/linux/find_LIBFREENECT.cmake	(working copy)
+@@ -1 +1,2 @@
+-icl_check_external_package(LIBFREENECT libfreenect.h freenect lib include/libfreenect TRUE TRUE)
++ # icl_check_external_package(LIBFREENECT libfreenect.h freenect lib include/libfreenect TRUE TRUE)
++   icl_check_external_package(LIBFREENECT libfreenect.h freenect local/lib64 local/include/libfreenect TRUE TRUE)
+
