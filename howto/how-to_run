@@ -1,0 +1,9 @@
+
+ * tu-wien:
+    > presegmenter -h
+    > presegmenter -f ../data/tu-wien/OSD-0.2/pcd/test6.pcd
+    > pcd_viewer      ../data/tu-wien/OSD-0.2/pcd/test6.pcd
+
+ * uni-bielefeld
+    > sudo   /vol/nivision/bin/icl-7.10.0/icl-kinect-segmentation-demo   -d /media/go/data/dVGA.xml   -c /media/go/data/cVGA.xml   -s VGA
+

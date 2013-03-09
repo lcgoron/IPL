@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+	<data id="title" type="string">no title defined</data>
+	<section id="camera">
+		<data id="name" type="string"></data>
+		<data id="position" type="Vec">| -182.421 |
+| 970.367 |
+| 725.024 |
+| 1 |</data>
+		<data id="norm" type="Vec">| 0.0309082 |
+| -0.67625 |
+| -0.736023 |
+| 1 |</data>
+		<data id="up" type="Vec">| 0.00723477 |
+| 0.736507 |
+| -0.676391 |
+| 1 |</data>
+		<data id="f" type="float">1</data>
+		<data id="principal-point-offset" type="Point32f">(161.942,122.758)</data>
+		<data id="sampling-resolution-x" type="float">306.25</data>
+		<data id="sampling-resolution-y" type="float">308.127</data>
+		<data id="skew" type="float">1.21226</data>
+		<section id="render-params">
+			<data id="chip-size" type="Size">320x240</data>
+			<data id="clip-z-near" type="float">0</data>
+			<data id="clip-z-far" type="float">10000</data>
+			<data id="viewport" type="Rect">(0,0)320x240</data>
+			<data id="viewport-z-min" type="float">0</data>
+			<data id="viewport-z-max" type="float">1</data>
+		</section>
+	</section>
+</config>
