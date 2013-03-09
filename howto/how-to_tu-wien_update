@@ -16,6 +16,12 @@ PREREQUISITES
     * pcl-1.7
         > svn co http://svn.pointclouds.org/pcl/trunk@8212 pcl-trunk
         > cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_surface_on_nurbs=ON ..
+        > 'flann not found'
+            ^ find /usr/ | grep libflann
+            ^ ccmake ..
+                < FLANN_INCLUDE_DIR   /usr/local/include
+                < FLANN_LIBRARY       /usr/local/lib64/libflann.so.1.7
+                < FLANN_LIBRARY_DEBUG /usr/local/lib64/libflann_cpp-gd.so
 
 INSTALLATION
 
